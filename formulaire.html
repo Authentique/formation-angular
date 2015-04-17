@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="collectify">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.css">
+
+        <!-- /Vendor -->
+        <script src="vendor/angular/angular.js"></script>
+        <script src="vendor/angular-route/angular-route.js"></script>
+        <script src="vendor/angular-sanitize/angular-sanitize.js"></script>
+        <script src="vendor/angular-cookies/angular-cookies.js"></script>
+        <script src="vendor/ngstorage/ngstorage.js"></script>
+        <script src="vendor/pouchdb/dist/pouchdb.js"></script>
+
+        <!-- /bootstrap -->
+        <script src="app.js"></script>
+
+        <!-- /config -->
+        <script src="config/constant.js"></script>
+
+        <!-- /services -->
+        <script src="services/testServices.js"></script>
+        <script src="services/itemEntrepot.js"></script>
+        <script src="services/utilisateurEntrepot.js"></script>
+
+        <!-- /directive -->
+        <script src="directives/itemList.js"></script>
+
+        <!-- /factory -->
+        <script src="services/megaTestorFactory.js"></script>
+        <script src="factory/connectFactory.js"></script>
+
+        <!-- /controllers -->
+        <script src="controllers/item.js"></script>
+        <script src="controllers/testAppelHttp.js"></script>
+        <script src="controllers/utilisateur.js"></script>
+
+        <!-- /routing -->
+        <script src="routing/item.js"></script>
+        <script src="routing/testAppelHttp.js"></script>
+    </head>
+
+    <body>
+        <h1>{{websiteConfig.TITLE}}.{{websiteConfig.DOMAIN}}</h1>
+
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#/items">Lister livres</a>
+                    <a class="navbar-brand" href="#/add/item">Ajouter livre</a>
+                    <a class="navbar-brand" href="#/users">Lister Utilisateurs</a>
+                    <a class="navbar-brand" href="#/add/utilisateur">Ajouter utilisateur</a>
+                    <a class="navbar-brand" href="#/appelHttp">Appel Http</a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="container" ng-view></div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<div id="listeUtilisateur">
+    <h1>Afficher la liste des utilisateurs (saisie via l'appli)</h1>
+
+    <div class="form-group">
+        <input type="text" ng-model="query" placeholder="Filtre" class="form-control" />
+    </div>
+
+    <table summary="Liste des utilisateurs enregistres" class="table table-bordered">
+        <caption>Liste des utilisateurs enregistres</caption>
+        <tr>
+            <th>
+                <a href="" ng-click="predicate='nom'; reverse=false">Nom</a>
+                (<a href="" ng-click="predicate = '-nom'; reverse=false">^</a>)
+            </th>
+            <th>
+                <a href="" ng-click="predicate='prenom'; reverse=false">Prenom</a>
+                (<a href="" ng-click="predicate = '-prenom'; reverse=false">^</a>)
+            </th>
+            <th>
+                <a href="" ng-click="predicate='dateNaissance'; reverse=false">Date de naissance</a>
+                (<a href="" ng-click="predicate = '-dateNaissance'; reverse=false">^</a>)
+            </th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="utilisateur in utilisateurs | filter:query | orderBy:predicate:reverse">
+            <td>{{utilisateur.nom}}</td>
+            <td>{{utilisateur.prenom}}</td>
+            <td>{{utilisateur.dateNaissance | date:websiteConfig.DATE_FORMAT}}</td>
+            <td><a class="btn btn-success" ng-href="#/majUser/{{utilisateur._id}}">Edit</a> <a class="btn btn-danger" ng-href="#/supUser/{{utilisateur._id}}">Remove</a></td>
+        </tr>
+    </table>
+</div>

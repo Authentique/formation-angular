@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="collectify">
+    <head>
+        <meta charset="utf-8">
+
+        <!-- /Vendor -->
+        <script src="vendor/angular/angular.js"></script>
+    </head>
+    <body>
+        {{ test }}
+
+        <p>1er contrôleur</p>
+        <div ng-controller="firstController">
+            <span ng-bind="sentence"></span><br>
+            <a ng-href="http://www.{{ link }}">{{ link }}</a><br>
+
+           <br><input type="text" ng-model="text" /><br>{{ text }}
+        </div>
+
+        <p>2eme contrôleur</p>
+        <div ng-controller="secondController">
+            <br>{{ sentence }}
+        </div>
+
+        <script type="application/javascript">
+            var app = angular.module('collectify', []);
+
+            app.controller('firstController', function($scope, $rootScope) {
+                $scope.sentence = 'Allo le monde !';
+                $scope.link = 'google.fr';
+                $scope.text = 'Tu as vu ?';
+                $rootScope.test = 'plop';
+            });
+
+            app.controller('secondController', function($scope, $rootScope) {
+                $scope.sentence = 'Hello kitty ;)';
+                $rootScope.test = 'toto';
+            });
+        </script>
+    </body>
+</html>

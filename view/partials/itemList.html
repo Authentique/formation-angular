@@ -1,0 +1,28 @@
+<table summary="Liste des exemplaires disponibles" class="table table-bordered">
+    <caption>Liste des exemplaires disponibles</caption>
+    <tr>
+        <th>
+            <a href="" ng-click="predicate='titre'; reverse=false">Titre</a>
+            (<a href="" ng-click="predicate = '-titre'; reverse=false">^</a>)
+        </th>
+        <th>
+            <a href="" ng-click="predicate='auteur'; reverse=false">Auteur</a>
+            (<a href="" ng-click="predicate = '-auteur'; reverse=false">^</a>)
+        </th>
+        <th>
+            <a href="" ng-click="predicate='dateCreation'; reverse=false">Date</a>
+            (<a href="" ng-click="predicate = '-dateCreation'; reverse=false">^</a>)
+        </th>
+        <th>Tarif</th>
+        <th>Description</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="exemplaire in exemplaires | filter:query | orderBy:predicate:reverse">
+        <td>{{exemplaire.titre}}</td>
+        <td>{{exemplaire.auteur}}</td>
+        <td>{{exemplaire.dateCreation | date:websiteConfig.DATE_FORMAT}}</td>
+        <td>{{exemplaire.tarif}} E</td>
+        <td>{{exemplaire.description}}</td>
+        <td><a class="btn btn-success" ng-href="#/majItem/{{exemplaire._id}}">Edit</a> <a class="btn btn-danger" ng-href="#/supItem/{{exemplaire._id}}">Remove</a></td>
+    </tr>
+</table>

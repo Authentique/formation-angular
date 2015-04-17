@@ -1,0 +1,40 @@
+<div id="creerItem" style="margin-left: auto; margin-right: auto; width:80%;">
+    <div class="alert alert-danger" ng-show="displayErreurAlert"><b><i>Attention : vous avez {{nbErreur}} erreur(s) dans votre saisie.</i></b></div>
+    <h1>Saisir un nouveau livre</h1>
+
+        <form name="createItem" class="form" ng-submit="addItem(exemplaire)">
+            <fieldset>
+                <legend>Informations du livre : </legend>
+
+                <div class="form-group">
+                    <input clas="form-control" type="text" ng-model="exemplaire.auteur" name="auteur" placeholder="auteur">
+                    <span class="alert alert-warning" ng-show="displayAuteurAlert"><i>L auteur est obligatoire.</i></span><br /><br />
+                </div>
+
+                <div class="form-group">
+                    <input clas="form-control" type="text" ng-model="exemplaire.titre" name="titre" placeholder="titre">
+                    <span class="alert alert-warning" ng-show="displayTitreAlert"><i>Le titre est obligatoire.</i></span>
+                    <br /><br />
+                </div>
+
+                <div class="form-group">
+                    <input clas="form-control" type="number" ng-model="exemplaire.tarif" name="tarif" placeholder="tarif">
+                    <span class="alert alert-warning" ng-show="displayTarifAlert"><i>Le tarif est obligatoire.</i></span>
+                    <br /><br />
+                </div>
+
+                <div class="form-group">
+                    <textarea ng-model="exemplaire.description" name="description" placeholder="description"></textarea><br /><br />
+                </div>
+
+                <div class="form-group">
+                    <input clas="form-control" type="date" ng-model="exemplaire.dateCreation" name="dateCreation">
+                    <span class="alert alert-warning" ng-show="displayDateAlert"><i>Le date est obligatoire.</i></span>
+                    <br /><br />
+                </div>
+
+                <br /><button class="btn btn-lg btn-primary" type="submit">{{buttonLabel ? buttonLabel : "Ajouter"}}</button>
+            </fieldset>
+        </form>
+
+</div>

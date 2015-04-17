@@ -1,0 +1,31 @@
+<div>
+    <h1>Afficher la liste des exemple (http)</h1>
+
+    <table summary="Liste alimentée par appel HTTP" class="table table-bordered">
+        <caption>Liste alimentée par appel HTTP</caption>
+            <tr>
+                <th>Num</th>
+                <th>Titre</th>
+                <th>Auteur</th>
+                <th>Tarif</th>
+                <th>Description</th>
+            </tr>
+            <tr ng-repeat="it in item">
+                <td>{{$index}}</td>
+                <td>{{it.titre}}</td>
+                <td>{{it.auteur}}</td>
+                <td>{{it.tarif}}</td>
+                <td>{{it.description}}</td>
+            </tr>
+    </table>
+    <div class="alert alert-success">
+        <p>Réponse brute : </p>
+        <pre>{{item}}</pre>
+    </div>
+
+    <div>
+        <p>Contenu du cookie : </p>
+        <span>{{msgCookie}}</span>
+    </div>
+
+</div>

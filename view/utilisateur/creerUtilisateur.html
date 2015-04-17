@@ -1,0 +1,30 @@
+<div id="creerUtilisateur" style="margin-left: auto; margin-right: auto; width:80%;">
+    <div class="alert alert-danger" ng-show="displayErreurAlert"><b><i>Attention : vous avez {{nbErreur}} erreur(s) dans votre saisie.</i></b></div>
+    <h1>Saisir un nouvel utilisateur</h1>
+
+    <form name="createUtilisateur" class="form" ng-submit="addItem(utilisateur)">
+        <fieldset>
+            <legend>Informations utilisateur : </legend>
+
+            <div class="form-group">
+                <input clas="form-control" type="text" ng-model="utilisateur.nom" name="nom" placeholder="nom">
+                <span class="alert alert-warning" ng-show="displayNomAlert"><i>Le nom est obligatoire.</i></span><br /><br />
+            </div>
+
+            <div class="form-group">
+                <input clas="form-control" type="text" ng-model="utilisateur.prenom" name="prenom" placeholder="prenom">
+                <span class="alert alert-warning" ng-show="displayPrenomAlert"><i>Le prenom est obligatoire.</i></span>
+                <br /><br />
+            </div>
+
+            <div class="form-group">
+                <input clas="form-control" type="date" ng-model="utilisateur.dateNaissance" name="dateNaissance">
+                <span class="alert alert-warning" ng-show="displayDateNaissAlert"><i>Le date de naissance est obligatoire.</i></span>
+                <br /><br />
+            </div>
+
+            <br /><button class="btn btn-lg btn-primary" type="submit">{{buttonLabel ? buttonLabel : "Ajouter"}}</button>
+        </fieldset>
+    </form>
+
+</div>
